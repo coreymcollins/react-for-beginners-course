@@ -10,6 +10,8 @@ import './css/style.css';
 // Import our StorePicker component.
 import StorePicker from './components/StorePicker';
 
+import App from './components/App';
+
 // Render a component.
 // <What does it render>, <what does it append to?>
-render( <StorePicker/>, document.querySelector( '#main' ) );
+render( <App/>, document.querySelector( '#main' ) );
