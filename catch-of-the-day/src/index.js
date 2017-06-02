@@ -4,14 +4,34 @@ import React from 'react';
 // Just import one method (render) from react-dom instead of the entire thing.
 import { render } from 'react-dom';
 
+// Import React Router requirements.
+import { BrowserRouter, Match, Miss } from 'react-router';
+
 // Import our CSS.
 import './css/style.css';
 
-// Import our StorePicker component.
+// Import StorePicker component.
 import StorePicker from './components/StorePicker';
 
+// Import App.
 import App from './components/App';
 
-// Render a component.
+// Import Not Found.
+import NotFound from './components/NotFound';
+
+// Build out our Routing functionality.
+const Root = () => {
+	return (
+		<BrowserRouter>
+			<div>
+				<Match exactly pattern="/" component={StorePicker} />
+				<Match exactly pattern="/store/:storeId" component={App} />
+				<Miss component={NotFound} />
+			</div>
+		</BrowserRouter>
+	)
+}
+
+// Render the Root.
 // <What does it render>, <what does it append to?>
-render( <App/>, document.querySelector( '#main' ) );
+render( <Root/>, document.querySelector( '#main' ) );
