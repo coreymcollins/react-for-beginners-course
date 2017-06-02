@@ -8,7 +8,7 @@ class StorePicker extends React.Component {
 	render() {
 		// I can still use a comment like normal here.
 		return (
-			<form className="form-selector">
+			<form className="store-selector">
 				{ /* But I need to get freaky deaky when commenting in JSX.  Don't put comments at the top level of a return.  They'll break! */ }
 				<h2>Please Enter A Store</h2>
 				<input type="text" required placeholder="Store Name"/>
